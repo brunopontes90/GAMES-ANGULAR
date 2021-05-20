@@ -11,14 +11,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-import { ConsolesComponent } from './views/consoles/consoles.component';
 import { JogosComponent } from './views/jogos/jogos.component';
+import { SobreComponent } from './views/sobre/sobre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsolesComponent,
-    JogosComponent
+    JogosComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30pt;
+    padding: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20pt;
+    padding: 15px;
+    margin: 10px;
+}

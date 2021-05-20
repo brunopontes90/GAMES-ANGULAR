@@ -2,3 +2,18 @@ a {
     color: white;
     text-decoration: none;
 }
+
+#games {
+    color: rgb(65, 126, 240);
+    padding: 10px;
+}
+
+#info {
+    color: rgb(213, 228, 77);
+    padding: 10px;
+}
+
+#home {
+    color: rgb(253, 253, 253);
+    padding: 10px;
+}
