@@ -1,3 +1,5 @@
+import { JogosService } from './../../service/jogos.service';
+import { Jogos } from './../../model/jogos';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JogosComponent implements OnInit {
 
-  constructor() { }
+  jogos = new Array<Jogos>();
+  selectJogo?: Jogos = undefined;
+
+  constructor(private jogoService: JogosService) { }
 
   ngOnInit(): void {
   }

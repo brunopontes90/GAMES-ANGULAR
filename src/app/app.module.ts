@@ -13,17 +13,21 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { JogosComponent } from './views/jogos/jogos.component';
 import { SobreComponent } from './views/sobre/sobre.component';
+import { HomeComponent } from './views/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     JogosComponent,
-    SobreComponent
+    SobreComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,

@@ -1,4 +1,4 @@
-a {
+#logoHome {
     color: white;
     text-decoration: none;
 }
@@ -16,4 +16,13 @@ a {
 #home {
     color: rgb(253, 253, 253);
     padding: 10px;
+}
+
+.sidenav {
+    width: 150px;
+}
+
+#card {
+    width: 900px;
+    margin: auto;
 }

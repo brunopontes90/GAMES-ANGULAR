@@ -3,14 +3,14 @@
         <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-        <h1>Games</h1>
+        <a href="/home" id="logoHome">Games</a>
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav class="sidenav" #sidenav mode="side" opened="false">
         <mat-nav-list>
-            <a mat-list-item routerLink="/">
+            <a mat-list-item routerLink="/home">
                 <span class="material-icons" id="home">home</span>Home
             </a>
             <a mat-list-item routerLink="/jogos">
@@ -22,11 +22,11 @@
         </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content id="card">
         <div style="min-height: calc(100vh - 64px)">
             <main>
                 <mat-card>
-                    <router-outlet>Games</router-outlet>
+                    <router-outlet></router-outlet>
                 </mat-card>
             </main>
         </div>
