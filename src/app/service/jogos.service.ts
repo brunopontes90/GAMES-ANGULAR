@@ -1,54 +1,42 @@
-import { JogosService } from 'src/app/service/jogos.service';
 import { Jogos } from 'src/app/model/jogos';
 import { Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { EMPTY, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JogosService{
 
-  private jogos = new Array<Jogos>();
-  private autoId = 0;
+  address = `${environment.url}jogos`;
 
-  constructor(private jogoService: JogosService) { }
-  ngOnInit(): void {}
+  constructor(private http: HttpClient) { }
 
   // INSERE NOVO JOGO
-  insert(jogo: Jogos): void{
-    jogo.id = this.autoId;
-    this.jogos.push(jogo);
-    this.autoId++;
+  insert(jogo?: Jogos): Observable<Jogos>{
+    if (!jogo){
+      return  EMPTY;
+    }
+    return this.http.post<Jogos>(this.address, jogo);
   }
 
   // LISTA TODOS OS JOGOS
-  list(): Array<Jogos>{
-    return this.jogos;
+  list(): Observable<Jogos[]>{
+    return this.http.get<Jogos[]>(this.address);
   }
 
   // REMOVE JOGO
-  remove( id: number): void{
-    for (let i = 0; i < this.jogos.length; i++){
-      const jogo = this.jogos[i];
-      if (jogo.id === id){
-        this.jogos.splice(i, 1);
-        break;
-      }
-    }
+  remove( id: number): Observable<any>{
+    return this.http.delete(`${this.address}/${id}`);
   }
 
   // ATUALIZA UM JOGO
-  update(jogo: Jogos): void{
-    for (let i = 0; i < this.jogos.length; i++){
-      const j = this.jogos[i];
-      if(j.id === jogo.id){
-        this.jogos[i] = jogo;
-        break;
-      }
+  update(jogo: Jogos): Observable<Jogos>{
+    if (!jogo){
+      return EMPTY;
     }
+    return this.http.put<Jogos>(`${this.address}/${jogo.id}`, jogo);
   }
 
-  // ATUALZIA A PAGINA DE JOGOS
-  refreshJogos(): void{
-    this.jogos = this.jogoService.list();
-  }
 }

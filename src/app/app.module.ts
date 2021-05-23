@@ -1,6 +1,7 @@
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import {LayoutModule} from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
