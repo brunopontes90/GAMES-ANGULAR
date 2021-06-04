@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JogosService } from 'src/app/service/jogos.service';
+import { Jogos } from 'src/app/model/jogos';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  jogos = new Array<Jogos>();
+  selectJogo?: Jogos;
+  constructor(private jogosService: JogosService) { }
 
   ngOnInit(): void {
+    this.list();
+  }
+
+  list(): void {
+    this.jogosService.list().subscribe(jogos => {
+      this.jogos = jogos;
+    });
   }
 
 }
