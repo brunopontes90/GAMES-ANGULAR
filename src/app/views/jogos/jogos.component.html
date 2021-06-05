@@ -1,1 +1,43 @@
-<p>jogos works!</p>
+<button mat-fab class="botaoAdd" (click)="novoJogo();">
+  <mat-icon>add</mat-icon>
+</button>
+
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome do Jogo</th>
+            <th>Plataforma</th>
+            <th>Avaliação</th>
+            <th>Genero</th>
+            <th>Ação</th>
+        </tr>
+        <tr *ngFor="let jogo of jogos" (click)="atualizar(jogo);">
+            <td>{{ jogo.id }}</td>
+            <td>{{ jogo.nomeJogo }}</td>
+            <td>{{ jogo.plataforma }}</td>
+            <td>{{ jogo.avaliacao }}</td>
+            <td>{{ jogo.genero }}</td>
+            <td>
+                <button mat-icon-button color="warn" (click)="remove(jogo.id);">
+                <span class="material-icons">delete</span>
+              </button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="selectJogo;">
+    <input type="text" placeholder="Nome" [(ngModel)]="selectJogo.nomeJogo">
+    <input type="text" placeholder="Genero" [(ngModel)]="selectJogo.genero">
+    <input type="text" placeholder="Plataforma" [(ngModel)]="selectJogo.plataforma">
+    <input type="text" placeholder="Avaliação" [(ngModel)]="selectJogo.avaliacao">
+    <input type="text" placeholder="url" [(ngModel)]="selectJogo.url">
+
+    <button mat-icon-button color="primary" (click)="salvar();"><span class="material-icons">
+      save
+    </span></button>
+    <button mat-icon-button color="warn" (click)=" cancelar(); "><span class=" material-icons ">
+      cancel
+    </span></button>
+</div>

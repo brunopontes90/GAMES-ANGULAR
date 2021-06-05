@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div id="body">
+    <h1>Bem vindo ao Games Nostalgia</h1>
+    <h2 class="desc">Confira nossos jogos</h2>
+
+    <!-- PEGA TODAS AS INFORMAÇÕES E LISTA NA HOME -->
+    <div *ngFor="let jogo of jogos">
+        <img src="{{jogo.url}}" id="image">
+        <p><span class="desc">Nome:</span> {{jogo.nomeJogo}}</p>
+        <p><span class="desc">Genero:</span> {{jogo.genero}}</p>
+        <p><span class="desc">Plataforma:</span> {{jogo.plataforma}}</p>
+        <p><span class="desc">Avaliação:</span> {{jogo.avaliacao}}</p>
+    </div>
+</div>
