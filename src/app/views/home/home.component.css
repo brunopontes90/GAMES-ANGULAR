@@ -1,17 +1,22 @@
 #body {
-  text-align: center;
-  padding: 2px;
-  margin: 2px;
-  text-transform: uppercase;
+    text-align: center;
+    padding: 2px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-weight: bold;
+    color: #E6E6E6;
 }
 
 #image {
-  border: solid #FF8000;
-  border-radius: 5px;
-  height: 200px;
+    border: solid #FF8000;
+    border-radius: 5px;
+    height: 200px;
 }
 
 .desc {
-  color: #BDBDBD;
-  font-weight: bold;
+    color: #BDBDBD;
+    font-weight: bold;
 }
