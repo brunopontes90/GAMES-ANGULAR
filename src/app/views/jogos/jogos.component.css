@@ -1,21 +1,61 @@
 .botaoAdd {
-    position: fixed;
-    right: 32px;
-    bottom: 32px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+}
+
+.btnRemove{
+  margin: auto 10px;
+}
+
+.forms {
+  display: block;
+  margin: 10px 0;
+}
+
+.title-game {
+  margin-top: 20px;
+}
+
+.red {
+  background: red;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.grey {
+  background: grey;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.green {
+  background: green;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.blue {
+  background: blue;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 td,
 th {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
+  text-align: center;
+  padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: #A4A4A4;
+  background-color: #A4A4A4;
+}
+
+.btnSave {
+  margin: 0 10px;
 }

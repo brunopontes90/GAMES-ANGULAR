@@ -3,41 +3,83 @@
 </button>
 
 <div>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Nome do Jogo</th>
-            <th>Plataforma</th>
-            <th>Avaliação</th>
-            <th>Genero</th>
-            <th>Ação</th>
-        </tr>
-        <tr *ngFor="let jogo of jogos" (click)="atualizar(jogo);">
-            <td>{{ jogo.id }}</td>
-            <td>{{ jogo.nomeJogo }}</td>
-            <td>{{ jogo.plataforma }}</td>
-            <td>{{ jogo.avaliacao }}</td>
-            <td>{{ jogo.genero }}</td>
-            <td>
-                <button mat-icon-button color="warn" (click)="remove(jogo.id);">
-                <span class="material-icons">delete</span>
-              </button>
-            </td>
-        </tr>
-    </table>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nome do Jogo</th>
+      <th>Plataforma</th>
+      <th>Avaliação</th>
+      <th>Genero</th>
+      <th>Ação</th>
+    </tr>
+    <tr *ngFor="let jogo of jogos; let i = index">
+      <td>{{ jogo.id }}</td>
+      <td>{{ jogo.nomeJogo }}</td>
+      <td>{{ jogo.plataforma }}</td>
+      <td>{{ jogo.avaliacao }}</td>
+      <td *ngIf="jogo.genero === 'Esporte' ">
+        <p class="red">{{ jogo.genero }}</p>
+      </td>
+      <td *ngIf="jogo.genero === 'Ação' ">
+        <p class="grey">{{ jogo.genero }}</p>
+      </td>
+      <td *ngIf="jogo.genero === 'Aventura' ">
+        <p class="blue">{{ jogo.genero }}</p>
+      </td>
+      <td *ngIf="jogo.genero === 'RPG' ">
+        <p class="green">{{ jogo.genero }}</p>
+      </td>
+      <td>
+        <button mat-icon-button color="primary" class="btnRemove" (click)="atualizar(jogo);">
+          <span class="material-icons">edit</span>
+        </button>
+
+        <button mat-icon-button color="warn" (click)="remove(jogo.id);">
+          <span class="material-icons">delete</span>
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>
 
-<div *ngIf="selectJogo;">
-    <input type="text" placeholder="Nome" [(ngModel)]="selectJogo.nomeJogo">
-    <input type="text" placeholder="Genero" [(ngModel)]="selectJogo.genero">
-    <input type="text" placeholder="Plataforma" [(ngModel)]="selectJogo.plataforma">
-    <input type="text" placeholder="Avaliação" [(ngModel)]="selectJogo.avaliacao">
-    <input type="text" placeholder="url" [(ngModel)]="selectJogo.url">
+<div *ngIf="formJogo;">
+  <h2 class="title-game">Dados do jogo</h2>
 
-    <button mat-icon-button color="primary" (click)="salvar();"><span class="material-icons">
-      save
-    </span></button>
-    <button mat-icon-button color="warn" (click)=" cancelar(); "><span class=" material-icons ">
-      cancel
-    </span></button>
+  <form [formGroup]="formJogo" (ngSubmit)="salvar();">
+
+    <input type="hidden" formControlName="id">
+    <mat-form-field appearance="fill" class="forms">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Ex: Fifa 21" formControlName="nomeJogo" required>
+
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="forms">
+      <mat-label>Plataforma</mat-label>
+      <input matInput placeholder="Ex: PS4" formControlName="plataforma" required>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="forms">
+      <mat-label>Avaliação</mat-label>
+      <input matInput placeholder="Ex: Tenho / Quero / Terminei" formControlName="avaliacao" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="forms">
+      <mat-label>Genero</mat-label>
+      <mat-select formControlName="genero" required>
+        <mat-option value="Ação">Ação</mat-option>
+        <mat-option value="Aventura">Aventura</mat-option>
+        <mat-option value="Esporte">Esporte</mat-option>
+        <mat-option value="RPG">RPG</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="forms">
+      <mat-label>Url</mat-label>
+      <input matInput placeholder="Ex: Url da foto" formControlName="url">
+    </mat-form-field>
+
+    <button type="submit" mat-flat-button color="primary" class="btnSave">Salvar</button>
+    <button type="button" mat-flat-button color="warn" (click)=" cancelar(); ">Cancelar</button>
+  </form>
 </div>

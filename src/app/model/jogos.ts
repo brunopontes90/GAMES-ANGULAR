@@ -5,4 +5,5 @@ export class Jogos {
   plataforma = '';
   avaliacao = '';
   url = '';
+  duracao?: string | null;
 }

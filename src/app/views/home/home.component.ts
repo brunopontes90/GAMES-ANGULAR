@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
 
   jogos = new Array<Jogos>();
   selectJogo?: Jogos;
+  insertUser = '';
+  user = localStorage.getItem('user');
+  editMod = false;
   constructor(private jogosService: JogosService) { }
 
   ngOnInit(): void {
@@ -23,4 +26,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  addUser(): void {
+    this.editMod = true;
+  }
+
+  save(): void {
+    localStorage.setItem('user', this.insertUser);
+  }
 }
