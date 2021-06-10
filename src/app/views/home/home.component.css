@@ -1,0 +1,82 @@
+/* CORPO DO PROJETO */
+
+#body {
+    text-align: center;
+    padding: 2px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+
+
+/* TITULO */
+
+h1 {
+    font-weight: bold;
+    color: #E6E6E6;
+}
+
+
+/* DEFINE TAMANHO DA IMAGEM */
+
+#image {
+    border: solid #FF8000;
+    border-radius: 5px;
+    height: 200px;
+}
+
+
+/* DESCRIÇÃO DO JOGO */
+
+.desc {
+    color: #BDBDBD;
+    font-weight: bold;
+}
+
+
+/* TAGS PARA GENEROS */
+
+.red {
+    background: red;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.grey {
+    background: grey;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.green {
+    background: green;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.blue {
+    background: blue;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+
+/* BOTÃO USUARIO */
+
+.botaoUser {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+}
+
+
+/* CAMPO PARA NOME DO USER */
+
+.inputUser {
+    position: fixed;
+    right: 100px;
+    bottom: 25px;
+}

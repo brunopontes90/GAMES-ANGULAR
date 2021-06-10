@@ -1,0 +1,87 @@
+/* BOTÃO PAR ADICIONAR NOVO JOGO */
+
+.botaoAdd {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+}
+
+
+/* BOTAO REMOVER */
+
+.btnRemove {
+    margin: auto 10px;
+}
+
+
+/* FORMULARIO PARA PREENCHIMENTO DE NOVO JOGO */
+
+.forms {
+    display: block;
+    margin: 10px 0;
+}
+
+
+/* TITULO DO JOGO */
+
+.title-game {
+    margin-top: 20px;
+}
+
+
+/* TAGS PARA GENEROS */
+
+.red {
+    background: red;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.grey {
+    background: grey;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.green {
+    background: green;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.blue {
+    background: blue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/* TAMANHO DA TABELA */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+/* CENTRALIZAR TEXTO E TAMANHO DAS COLUNAS */
+
+td,
+th {
+    text-align: center;
+    padding: 8px;
+}
+
+
+/* COR DA TABELA */
+
+tr:nth-child(even) {
+    background-color: #A4A4A4;
+}
+
+
+/* BOTÃO SALVAR */
+
+.btnSave {
+    margin: 0 10px;
+}

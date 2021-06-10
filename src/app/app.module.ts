@@ -3,7 +3,7 @@ import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import {LayoutModule} from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +15,11 @@ import { MatCardModule } from '@angular/material/card';
 import { JogosComponent } from './views/jogos/jogos.component';
 import { SobreComponent } from './views/sobre/sobre.component';
 import { HomeComponent } from './views/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
@@ -36,7 +41,10 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatListModule,
     LayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

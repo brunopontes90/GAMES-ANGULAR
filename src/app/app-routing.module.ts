@@ -5,9 +5,10 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'jogos', component: JogosComponent},
-  {path: 'sobre', component: SobreComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'jogos', component: JogosComponent },
+  { path: 'sobre', component: SobreComponent },
 ];
 
 @NgModule({

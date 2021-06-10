@@ -1,3 +1,5 @@
+/* DEFINIÇÕES DO TITULO */
+
 h1 {
     font-size: 25pt;
     font-weight: bold;
@@ -5,9 +7,20 @@ h1 {
     margin-top: 10px;
 }
 
+
+/* DEFINIÇÕES DO PARAGRAFO */
+
 p {
-    font-size: 18pt;
+    font-size: 16pt;
     margin: 20px;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
+}
+
+
+/* NOMES DOS PARTICIPANTES DO PROJETO */
+
+.devs {
+    font-size: 18pt;
+    font-weight: bold;
 }
