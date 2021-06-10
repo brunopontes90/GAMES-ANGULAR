@@ -1,33 +1,34 @@
 <div id="body">
-  <button mat-fab color="primary" class="botaoUser" (click)="addUser();">
+    <!-- BOTAO PARA ARMAZENAR NOME DO USER EM LOCALSTORAGE -->
+    <button mat-fab color="primary" class="botaoUser" (click)="addUser();">
     <mat-icon>account_circle</mat-icon>
   </button>
 
-  <div *ngIf="editMod;" class="inputUser">
-    <mat-form-field>
-      <mat-label>Nome</mat-label>
-      <input matInput placeholder="Ex: Jogador 1" [(ngModel)]="insertUser">
-    </mat-form-field>
-    <button mat-icon-button color="primary" class="btnSave" (click)="save();">
+    <div *ngIf="editMod;" class="inputUser">
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Ex: Jogador 1" [(ngModel)]="insertUser">
+        </mat-form-field>
+        <button mat-icon-button color="primary" class="btnSave" (click)="save();">
       <mat-icon>save</mat-icon>
     </button>
-  </div>
+    </div>
 
-  <h1>Bem vindo {{ user }}</h1>
-  <h2 class="desc">Confira nossos jogos</h2>
+    <h1>Bem vindo {{ user }}</h1>
+    <h2 class="desc">Confira nossos jogos</h2>
 
-  <!-- PEGA TODAS AS INFORMAÇÕES E LISTA NA HOME -->
-  <div *ngFor="let jogo of jogos">
-    <img src="{{jogo.url}}" id="image">
-    <p><span class="desc">Nome:</span> {{jogo.nomeJogo}}</p>
-    <p>
-      <span class="desc">Genero:</span>
-      <span *ngIf="jogo.genero === 'Esporte' " class="red">{{jogo.genero}}</span>
-      <span *ngIf="jogo.genero === 'Ação' " class="grey">{{jogo.genero}}</span>
-      <span *ngIf="jogo.genero === 'Aventura' " class="blue">{{jogo.genero}}</span>
-      <span *ngIf="jogo.genero === 'RPG' " class="green">{{jogo.genero}}</span>
-    </p>
-    <p><span class="desc">Plataforma:</span> {{jogo.plataforma}}</p>
-    <p><span class="desc">Avaliação:</span> {{jogo.avaliacao}}</p>
-  </div>
+    <!-- PEGA TODAS AS INFORMAÇÕES E LISTA NA HOME -->
+    <div *ngFor="let jogo of jogos">
+        <img src="{{jogo.url}}" id="image">
+        <p><span class="desc">Nome:</span> {{jogo.nomeJogo}}</p>
+        <p>
+            <span class="desc">Genero:</span>
+            <span *ngIf="jogo.genero === 'Esporte' " class="red">{{jogo.genero}}</span>
+            <span *ngIf="jogo.genero === 'Ação' " class="grey">{{jogo.genero}}</span>
+            <span *ngIf="jogo.genero === 'Aventura' " class="blue">{{jogo.genero}}</span>
+            <span *ngIf="jogo.genero === 'RPG' " class="green">{{jogo.genero}}</span>
+        </p>
+        <p><span class="desc">Plataforma:</span> {{jogo.plataforma}}</p>
+        <p><span class="desc">Avaliação:</span> {{jogo.avaliacao}}</p>
+    </div>
 </div>
